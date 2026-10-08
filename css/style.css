@@ -1015,3 +1015,47 @@ p{color:#a4b1c5}
   .contact-date{justify-content:flex-start}
 }
 
+/* Royal blue and white visual refresh. */
+:root{
+  --bg:#ffffff;
+  --surface:#f7faff;
+  --blue:#1746d1;
+  --text:#111827;
+  --muted:#5b6472;
+  --line:#d9e3f5;
+  color-scheme:light;
+}
+body{background:#fff;color:var(--text)}
+.site-header{background:#ffffffee;border-bottom-color:#d9e3f5}
+.site-header nav a{color:#334155}
+.site-header nav a:hover,.site-header nav a.active{color:#1746d1}
+.hero{background:#fff}
+.hero::after{background:linear-gradient(180deg,#eef4ff,#fff);border-left-color:#d9e3f5}
+.hero h1,.hero h2,.hero h3,.section h2,.section h3{color:#111827}
+.hero h1 span,.blue{color:#1746d1}
+.hero-line,p{color:#5b6472}
+.hero-media:before{border-color:#1746d1}
+.countdown-band,.aims-band{background:#eef4ff;border-color:#d9e3f5}
+.countdown-title p,.countdown-title strong,.countdown-date strong{color:#111827}
+.countdown strong,.section-label,.countdown span{color:#1746d1}
+.brief-grid article,.numbered-list details,.event-facts,.venue-notes article{border-color:#d9e3f5}
+.about{background:#f7faff}
+.why,.contact{background:linear-gradient(135deg,#0b2e8a,#1746d1)}
+.why h2,.why p,.contact h2,.contact p,.why-list li,.contact-details{color:#fff}
+.button{background:#1746d1;box-shadow:0 8px 22px #1746d126}
+.button:hover{background:#0b2e8a}
+.text-link{color:#1746d1;border-color:#1746d1}
+.numbered-list summary>span{
+  width:34px;height:34px;display:grid;place-items:center;flex:0 0 34px;
+  border-radius:50%;background:#1746d1;color:#fff;
+  font-family:'Manrope',Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:0;
+}
+.numbered-list summary h3{color:#111827}
+.numbered-list summary b{color:#1746d1}
+.open-list li:before{content:'•';color:#1746d1;font-size:18px;line-height:1;vertical-align:-1px}
+.aims-list li:before{color:#1746d1;font-weight:800}
+.section-label{color:#1746d1}
+.speaker-card,.venue-map,.venue-notes article{border-color:#d9e3f5}
+.partner-item:hover{border-color:#9bb8f5;background:#f7faff}
+.footer-grid h2{color:#fff}
+
