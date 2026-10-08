@@ -74,6 +74,10 @@ function renderPanelists() {
     fragment.append(card);
   });
   grid.replaceChildren(fragment);
+
+  // Duplicate the finished set so the transform can loop without a visible seam.
+  const cards = Array.from(grid.children);
+  cards.forEach((card) => grid.append(card.cloneNode(true)));
 }
 
 function startCountdown() {

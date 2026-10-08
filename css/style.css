@@ -1380,6 +1380,68 @@ p{color:#526589}
 .audience-list li:hover p{color:#102a58}
 .numbered-list article:hover>span{background:#d8e8ff;color:#0747bd}
 
+/* Distinguished panellists: seamless, hover-pausable event-photo rail. */
+.speakers .speaker-rail{
+  overflow:hidden;
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+}
+.speakers .speaker-grid{
+  display:flex;
+  flex-wrap:nowrap;
+  gap:20px;
+  width:max-content;
+  padding:8px 0 18px;
+  animation:speakerRail 31s linear infinite;
+}
+.speakers .speaker-card{
+  flex:0 0 clamp(190px,16vw,245px);
+  min-width:0;
+  transition:transform .28s ease,box-shadow .28s ease;
+}
+.speakers .speaker-card img{transition:transform .6s cubic-bezier(.2,.75,.25,1),filter .35s ease}
+.speakers .speaker-card figure{margin-bottom:14px}
+.speakers .speaker-card img{height:205px}
+.speakers .speaker-copy h3{font-size:16px}
+.speakers .speaker-copy>span{font-size:9px}
+.speakers .speaker-copy p{font-size:11px}
+.speakers .speaker-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px #0a459226}
+.speakers .speaker-card:hover img{transform:scale(1.045);filter:saturate(1.08)}
+.speakers .speaker-copy{text-align:center}
+.speakers .speaker-copy h3,.speakers .speaker-copy p,.speakers .speaker-copy>span{display:block;text-align:center}
+.roundtable-copy>p{color:#102a58!important;background:#f4f8ff;border-color:#c9dcf5}
+.venue-title h3{color:#102a58!important}
+.venue-title>p{color:#0747bd!important}
+.venue-location,.venue-details dt,.venue-details dd{color:#334d73!important}
+.section-label,.header-event-copy span,.site-header .site-nav a,.partner-tier,.carousel-caption span,.carousel-play,
+.city-vision-copy>p:not(.section-label),.speaker-card p,.demo-note,.why-list li span,.timeline li>span,
+.audience-list li,.roundtable-copy li,.experience-summary,.roundtable-outcome,.header-cta,
+.gallery-grid button>span,.footer-grid p,.footer-grid>div>a:not(.brand),.venue-details dt,
+.venue-details dd,.venue-notes article>span{font-size:12px}
+.speakers .speaker-rail:hover .speaker-grid{animation-play-state:paused}
+@keyframes speakerRail{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 10px))}}
+@media(max-width:600px){
+  .speakers .speaker-grid{gap:14px;padding-bottom:12px}
+  .speakers .speaker-grid{animation-duration:25s}
+  .speakers .speaker-card{flex-basis:170px}
+  .speakers .speaker-card img{height:165px}
+  .speakers .speaker-copy h3{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.speakers .speaker-grid{animation:none}}
+
+/* Premium navy navigation treatment. */
+.event-nav-bar{background:#0B1F3A;box-shadow:0 8px 22px #0B1F3A35}
+.site-header .site-nav a{position:relative;color:#FFFFFF}
+.site-header .site-nav a:hover,
+.site-header .site-nav a.active{color:#00CFE8}
+.site-header .site-nav a.active:after{position:absolute;right:0;bottom:-1px;left:0;height:2px;background:#00CFE8;content:""}
+@media(max-width:850px){
+  .site-header .site-nav{background:#0B1F3A}
+  .site-header .site-nav a{color:#FFFFFF}
+  .site-header .site-nav a:hover,
+  .site-header .site-nav a.active{color:#00CFE8}
+  .site-header .site-nav a.active:after{display:none}
+}
+
 /* Header polish: keep the light theme, but give the top area depth and the nav a clear royal-blue identity. */
 .site-header{background:#f7faffee;border-bottom-color:#d7e4f6;box-shadow:0 8px 30px #0a3d9518;backdrop-filter:blur(14px)}
 .event-header-top{position:relative;overflow:hidden;background:radial-gradient(circle at 88% 20%,#dceaff 0,transparent 33%),linear-gradient(115deg,#fff 0%,#f7faff 58%,#edf5ff 100%)}
@@ -1388,6 +1450,13 @@ p{color:#526589}
 .site-header .site-nav a{color:#eef5ff}
 .site-header .site-nav a:hover,.site-header .site-nav a.active{color:#fff}
 @media(max-width:850px){.site-header .site-nav{background:linear-gradient(100deg,#123d91,#1e5bc4 54%,#2b78e6);box-shadow:0 14px 25px #123d9140}.site-header .site-nav a{color:#eef5ff;border-color:#ffffff24}.site-header .site-nav a:hover,.site-header .site-nav a.active{color:#fff}}
+
+/* Final navigation palette override. */
+.event-nav-bar{background:#0B1F3A;box-shadow:0 8px 22px #0B1F3A35}
+.site-header .site-nav a{position:relative;color:#FFFFFF}
+.site-header .site-nav a:hover,.site-header .site-nav a.active{color:#00CFE8}
+.site-header .site-nav a.active:after{position:absolute;right:0;bottom:-1px;left:0;height:2px;background:#00CFE8;content:""}
+@media(max-width:850px){.site-header .site-nav{background:#0B1F3A}.site-header .site-nav a{color:#FFFFFF}.site-header .site-nav a:hover,.site-header .site-nav a.active{color:#00CFE8}.site-header .site-nav a.active:after{display:none}}
 
 /* Replace legacy encoded arrow glyphs with reliable, accessible bullets. */
 .open-list li:before,.audience-list li:before,.gallery-grid button>span:after{content:'•';font-family:Arial,sans-serif;font-weight:800}
