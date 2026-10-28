@@ -1523,3 +1523,59 @@ html,body{max-width:100%;overflow-x:hidden}
 .open-list li:before,.audience-list li:before,.gallery-grid button>span:after{content:'•';font-family:Arial,sans-serif;font-weight:800}
 .roundtable-copy li:before{content:'•';font-family:Arial,sans-serif;font-weight:800}
 
+/* The following roundtable section provides the spacing after the audience list. */
+.audience.section{padding-bottom:0}
+
+/* Restore the original event photograph while retaining the updated banner text. */
+.hero-original-photo{clip-path:polygon(48% 0,100% 0,100% 100%,42% 100%,42% 40%,44% 28%,48% 28%);pointer-events:none}
+
+/* Production responsive safeguards. */
+img,iframe{max-width:100%}
+.site-header .site-nav a,.menu-toggle,.carousel-arrow,.carousel-play,.gallery-grid button{touch-action:manipulation}
+.contact-details a,.footer-grid a{overflow-wrap:anywhere}
+
+@media(max-width:850px){
+  .menu-toggle{display:block;min-width:44px;min-height:44px;flex:0 0 44px;color:#0747bd}
+  .site-header .site-nav{max-height:calc(100dvh - 82px);overflow-y:auto;overscroll-behavior:contain}
+  .site-header .site-nav a{display:flex;align-items:center;min-height:48px}
+}
+
+@media(max-width:767px){
+  h2{font-size:clamp(30px,8.5vw,42px)}
+  .section{padding-block:clamp(54px,10vw,72px)}
+  .hero.hero-artwork{height:clamp(260px,66.67vw,360px);aspect-ratio:auto;border-radius:0}
+  .hero-artwork-image{width:auto;min-width:0;max-width:none;height:100%;object-fit:contain;object-position:left center}
+  .hero-artwork-cta{top:75%;left:12.5%;width:30%;height:13%}
+  .carousel-arrow{width:44px;height:44px}
+  .carousel-play{min-height:44px;padding-inline:14px}
+  .carousel-dot{width:12px;height:12px;flex-basis:12px}
+  .brief-grid article,.numbered-list article,.audience-list li,.takeaways ol li{min-width:0}
+  .roundtable-grid .media-frame img{height:clamp(280px,72vw,420px)}
+  .contact-grid>div:first-child,.contact-details{min-width:0}
+}
+
+@media(max-width:480px){
+  .event-header-top .header-inner{height:72px}
+  .header-event-copy strong{font-size:clamp(15px,4.6vw,18px)}
+  .hero.hero-artwork{height:clamp(210px,62vw,300px)}
+  .hero-artwork-cta{left:14%;width:60%;top:75%;height:13%}
+  .carousel-frame{height:min(62vh,420px);min-height:260px}
+  .carousel-controls{align-items:center}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-grid button:first-child{grid-column:auto}
+  .gallery-grid img,.gallery-grid button:first-child img,.gallery-grid button:nth-child(6) img{height:220px}
+  .gallery-grid button>span{font-size:11px;padding:32px 14px 14px}
+  .partner-item{min-height:145px}
+  .contact h2{font-size:clamp(31px,10vw,40px)}
+  .contact-details>a{min-height:72px}
+  .lightbox{width:calc(100vw - 16px);padding:8px}
+  .lightbox-toolbar,.lightbox-bottom{gap:8px}
+  .lightbox button{width:44px;height:44px}
+}
+
+@media(max-width:600px){
+  .countdown{width:100%;gap:0;justify-content:space-between}
+  .countdown p{min-width:0;flex:1 1 0}
+  .countdown i{flex:0 0 auto;margin-inline:2px}
+}
+
