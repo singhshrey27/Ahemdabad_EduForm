@@ -201,19 +201,16 @@ function setupCarousel() {
     { image: "images/event-photos/DSC00274.jpg", alt: "Attendees in conversation during the event", caption: "Conversations with purpose" },
     { image: "images/event-photos/DSC00353.jpg", alt: "Boardroom roundtable in session", caption: "Focused roundtable conversations" },
     { image: "images/event-photos/DSC00623.jpg", alt: "A moment from a previous education leadership gathering", caption: "A shared vision for education" },
-    { image: "images/event-photos/DSC00624.jpg", alt: "Panel of senior leaders in conversation", caption: "Leadership dialogue" },
     { image: "images/event-photos/DSC09978.jpg", alt: "Wide view of a leadership roundtable", caption: "Collaborative problem solving" },
     { image: "images/event-photos/IMG_5841.jpg", alt: "Education leaders connecting at a previous forum", caption: "Learning from one another" }
   ];
   const image = carousel.querySelector("[data-carousel-image]");
-  const caption = carousel.querySelector("[data-carousel-caption]");
-  const counter = carousel.querySelector("[data-carousel-count]");
   const dots = carousel.querySelector("[data-carousel-dots]");
   const previous = carousel.querySelector("[data-carousel-previous]");
   const next = carousel.querySelector("[data-carousel-next]");
   const play = carousel.querySelector("[data-carousel-play]");
   const status = carousel.querySelector("[data-carousel-status]");
-  if (!image || !caption || !counter || !dots || !previous || !next || !play || !status) return;
+  if (!image || !dots || !previous || !next || !play || !status) return;
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let currentIndex = 0;
@@ -247,8 +244,6 @@ function setupCarousel() {
     carousel.style.setProperty("--carousel-background", `url("../${slide.image}")`);
     image.src = slide.image;
     image.alt = slide.alt;
-    caption.textContent = slide.caption;
-    counter.textContent = `${currentIndex + 1} / ${slides.length}`;
     dotButtons.forEach((dot, dotIndex) => {
       if (dotIndex === currentIndex) {
         dot.setAttribute("aria-current", "true");
